@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">very quietly take my leave</span><br />
+				<span class="comments">as quietly as i came here</span><br />
+				<span class="comments">quietly i wave good-bye</span><br />
+				<span class="comments">to the rosy clouds in the western sky</span><br />
+				<span class="comments">the golden willows by the riverside</span><br />
+				<span class="comments">are young brides in the setting sun</span><br />
+				<span class="comments">their reflections on the shimmering waves</span><br />
+				<span class="comments">always linger in the depth of my heart</span><br />
+				<span class="comments">the floating heart growing in the sludge</span><br />
+				<span class="comments">sways leisurely under the water</span><br />
+				<span class="comments">in the gentle waves of cambridge</span><br />
+				<span class="comments">i would be a water plant</span><br />
+				<span class="comments">that pool under the shade of elm trees</span><br />
+				<span class="comments">holds not water but the rainbow</span><br />
+				<span class="comments">shattered to pieces among the duckweeds</span><br />
+				<span class="comments">is the sediment of a rainbow-like dream</span><br />
+				<span class="comments">to seek a dream? just to pole a boat upstream</span><br />
+				<span class="comments">to where the green grass is more verdant</span><br />
+				<span class="comments">or to have the boat fully loaded with starlight</span><br />
+				<span class="comments">and sing aloud in the splendor of starlight</span><br />
+				<span class="comments">but i cannot sing aloud</span><br />
+				<span class="comments">quietness is my farewell music</span><br />
+				<span class="comments">even summer insect heap silence for me</span><br />
+				<span class="comments">slient is cambridge tonight</span><br />
+				<span class="comments">very quietly i take my leave</span><br />
+				<span class="comments">as quietly as i came here</span><br />
+				<span class="comments">gently i flick my sleeves</span><br />
+				<span class="comments">not even a wisp of cloud will i bring away</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Y</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div id="copyright">-->
+			<!--Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />-->
+			<!--Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011-->
+		<!--</div>-->
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 1, 1);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
